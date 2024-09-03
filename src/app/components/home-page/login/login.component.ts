@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HomePageService } from '../../../services/home-page/home-page.service';
 import { LoginRequestDto } from '../../../common/loginRequestDto';
+import { HomePageService } from '../../../services/home-page/home-page.service';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +21,7 @@ export class LoginComponent {
 
     const loginRequest = new LoginRequestDto();
     loginRequest.email = this.emailLogin;
-    loginRequest.senha = this.passwordLogin;
+    loginRequest.password = this.passwordLogin;
 
     console.log(loginRequest) //apenas para eu ver se está certo input
 
