@@ -2,6 +2,7 @@
 
   <main class='w-full flex max-md:flex-col dark:text-[#ececec] h-screen rounded-lg p-[0.0725rem]'>
 
+    <!--IMAGE SPACEMAN E SLOGAN-->
     <div class='flex justify-center w-[60vw] items-end max-[1086px]:hidden bg-cover bg-center rounded-l-md'
       style="background-image: url(/img/spaceman.jpg);">
 
@@ -19,9 +20,29 @@
       </div>
     </div>
 
-    <div class='flex flex-[1] flex-col justify-center items-center rounded-r-md
-        bg-[#F3F5F9] dark:bg-[#161618] border-l border-[#dbdee4] dark:border-[0] p-4'>
+
+    <!--CAMPOS DE LOGIN-->
+    <div *ngIf="exibirLogin" class='flex flex-[1] flex-col justify-center items-center rounded-r-md 
+                                  bg-[#F3F5F9] dark:bg-[#161618] border-l border-[#dbdee4] dark:border-[0] p-4'>
+
       <app-login></app-login>
+      <small>
+        Não está registrado? <a class='text-[#287194] font-semibold cursor-pointer' (click)="alternarLoginCadastro()">Crie sua
+          conta</a>
+      </small>
     </div>
+
+
+    <!--CAMPOS DE CADRASTRO-->
+    <div [@fadeInOut] *ngIf="!exibirLogin" class='flex flex-[1] flex-col justify-center items-center rounded-r-md
+                                     bg-[#F3F5F9] dark:bg-[#161618] border-l border-[#dbdee4] dark:border-[0] p-4'>
+
+      <app-cadastro></app-cadastro>
+      <small>
+        Já tem uma conta? <a class='text-[#287194] font-semibold cursor-pointer' (click)="alternarLoginCadastro()">Faça
+          login</a>
+      </small>
+    </div>
+
   </main>
 </div>
