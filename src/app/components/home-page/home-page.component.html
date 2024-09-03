@@ -1,0 +1,46 @@
+<div class="bg-[#287194]">
+
+  <main class='w-full flex dark:text-[#ececec] h-screen rounded-lg p-[0.0725rem]'>
+
+    <!--IMAGE SPACEMAN E SLOGAN-->
+    <div class='flex justify-center w-[65vw] items-end max-sm:hidden bg-cover bg-center rounded-l-md'
+      style="background-image: url(/img/1.gif);">
+
+      <div class='flex flex-col items-center justify-center bg-[#161616]/95 w-full p-3'>
+
+        <h1 class=' flex text-4xl font-black text-[##9E9290] max-lg:text-lg'> Criado para abastecer o 
+          <strong class="ml-2 text-[#287194]"> FUTURO</strong>
+          <img src="img/rocket_1.webp" alt="" class="w-10 h-10 ml-3">
+        </h1>
+        <p class='text-[#121725] dark:text-[#9E9290] mt-1 max-lg:text-[10px]'>
+          Abasteça sua jornada com nossa plataforma. Combustível para o seu sucesso!
+        </p>
+      </div>
+    </div>
+
+
+    <!--CAMPOS DE LOGIN-->
+    <div *ngIf="exibirLogin" class='flex flex-[1] flex-col justify-center items-center rounded-r-md 
+        bg-[#F3F5F9] dark:bg-[#161616] border-l border-[#dbdee4] dark:border-[0] p-4'>
+
+      <app-login></app-login>
+      <small>
+        Não está registrado? <a class='text-[#287194] font-semibold cursor-pointer' (click)="alternarLoginCadastro()">Crie sua
+          conta</a>
+      </small>
+    </div>
+
+
+    <!--CAMPOS DE CADRASTRO-->
+    <div *ngIf="!exibirLogin" class='flex flex-[1] flex-col justify-center items-center rounded-r-md
+        bg-[#F3F5F9] dark:bg-[#161616] border-l border-[#dbdee4] dark:border-[0] p-4'>
+
+      <app-cadastro></app-cadastro>
+      <small>
+        Já tem uma conta? <a class='text-[#287194] font-semibold cursor-pointer' (click)="alternarLoginCadastro()">Faça
+          login</a>
+      </small>
+    </div>
+
+  </main>
+</div>
