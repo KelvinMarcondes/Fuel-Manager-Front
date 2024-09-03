@@ -1,38 +1,38 @@
-
-
 <div class='flex flex-col'>
-  
+
   <div class="flex items-center mb-4">
     <img src="img/woman-astronaut.png" alt="woman-astronaut" class="w-9 h-9 mr-3">
     <h3 class='font-black text-2xl mb-[-15px]'>Login</h3>
   </div>
 
   <form class='max-w-sm'>
+
+    <!--INPUT SENHA-->
     <label class='font-semibold text-sm'>E-mail</label>
-    <input class='bg-white border-[1px] dark:border-[0] w-full h-11 p-4 
-            rounded-md mt-2 mb-4 dark:bg-[#3D404b] placeholder:text-sm' type="text"
-      placeholder="Digite seu e-mail" />
+    <input [(ngModel)]="emailLogin" name="emailLogin" type="text" placeholder="Digite seu e-mail"
+      class='bg-white border-[1px] dark:border-[0] w-full h-11 p-4 rounded-md mt-2 mb-4 dark:bg-[#3D404b] placeholder:text-sm'/>
 
-
-
+    <!--INPUT PASSWORD-->
     <label class='font-semibold text-sm'>Senha</label>
-    <input class='bg-white border-[1px] dark:border-[0] w-full h-11 p-4 
-            rounded-md mt-2 mb-4 dark:bg-[#3D404b] placeholder:text-sm' type="password"
-      placeholder="Digite sua senha" />
+    <input [(ngModel)]="passwordLogin" name="passwordLogin" type="password" placeholder="Digite sua senha"
+      class='bg-white border-[1px] dark:border-[0] w-full h-11 p-4 rounded-md mt-2 mb-4 dark:bg-[#3D404b] placeholder:text-sm'/>
 
 
     <div class='flex items-center justify-between text-xs'>
+      
       <label class='text-[#9BA1AE] flex'>
         <input class='mr-1 w-4 h-4  checked:bg-[#00DEFE] border-[#3D404b]' type="checkbox" />
         <p>Lembrar senha</p>
       </label>
       <a href="">Esqueceu sua senha?</a>
+
     </div>
 
-    <button class='bg-[#287194] font-bold w-full border-[0] p-3 
-            text-white shadow-[0px 8px 26px rgba(0, 222, 254, 0.36)] 
-            rounded-md my-3 cursor-pointer'>
+    <button (click)="login()" class='bg-[#287194] font-bold w-full border-[0] p-3 text-white 
+                          shadow-[0px 8px 26px rgba(0, 222, 254, 0.36)] rounded-md my-3 cursor-pointer'>
       Login
     </button>
+
   </form>
+
 </div>
