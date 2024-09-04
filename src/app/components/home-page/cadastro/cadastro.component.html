@@ -7,27 +7,24 @@
   <form class='max-w-sm'>
 
     <label class='font-semibold text-sm'>Nome</label>
-    <input class='bg-white border-[1px] dark:border-[0] w-full h-11 p-4 
-              rounded-md mt-2 mb-4 dark:bg-[#3D404b] placeholder:text-sm' type="text"
-      placeholder="Digite seu e-mail" />
+    <input [(ngModel)]="nameCadastro" name="nameCadastro"  type="text" placeholder="Digite seu nome"
+            class='bg-white border-[1px] dark:border-[0] w-full h-11 p-4 rounded-md mt-2 mb-4 dark:bg-[#3D404b] placeholder:text-sm'/>
 
 
     <label class='font-semibold text-sm'>E-mail</label>
-    <input class='bg-white border-[1px] dark:border-[0] w-full h-11 p-4 
-              rounded-md mt-2 mb-4 dark:bg-[#3D404b] placeholder:text-sm' type="email"
-      placeholder="Digite seu e-mail" />
+    <input [(ngModel)]="emailCadastro" name="emailCadastro" type="email" placeholder="Digite seu e-mail"
+            class='bg-white border-[1px] dark:border-[0] w-full h-11 p-4 rounded-md mt-2 mb-4 dark:bg-[#3D404b] placeholder:text-sm'/>
 
 
     <label class='font-semibold text-sm'>Senha</label>
-    <input class='bg-white border-[1px] dark:border-[0] w-full h-11 p-4 
-              rounded-md mt-2 mb-4 dark:bg-[#3D404b] placeholder:text-sm' type="password"
-      placeholder="Digite sua senha" />
+    <input [(ngModel)]="passwordCadastro" name="passwordCadastro" type="password" placeholder="Digite sua senha"
+            class='bg-white border-[1px] dark:border-[0] w-full h-11 p-4 rounded-md mt-2 mb-4 dark:bg-[#3D404b] placeholder:text-sm'/>
 
 
-    <button class='bg-[#287194] font-bold w-full border-[0] p-3 
-              text-white shadow-[0px 8px 26px rgba(0, 222, 254, 0.36)] 
-              rounded-md my-3 cursor-pointer'>
+    <button (click)="cadastro()" class='bg-[#287194] font-bold w-full border-[0] p-3  text-white 
+                            shadow-[0px 8px 26px rgba(0, 222, 254, 0.36)]  rounded-md my-3 cursor-pointer'>
       Cadastrar
     </button>
+    
   </form>
 </div>

@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { LoginRequestDto } from '../../../common/loginRequestDto';
-import { HomePageService } from '../../../services/home-page/home-page.service';
+import { LoginRequestDto } from '../../../common/homepageDtos';
+import { LoginService } from '../../../services/login/login.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -12,7 +14,7 @@ import { HomePageService } from '../../../services/home-page/home-page.service';
 
 export class LoginComponent {
 
-  constructor(private homePageService: HomePageService) { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
   emailLogin: string = ''
   passwordLogin: string = ''
@@ -23,17 +25,18 @@ export class LoginComponent {
     loginRequest.email = this.emailLogin;
     loginRequest.password = this.passwordLogin;
 
-    console.log(loginRequest) //apenas para eu ver se está certo input
-
-    this.homePageService.login(loginRequest)
-      .subscribe({
-        next: (response) => {
-          console.log('Login successful!', response);
-        },
-        error: (error) => {
-          console.error('Error while logging in:', error);
-        }
-      });
+    this.loginService.login(loginRequest)
+    .subscribe({
+      next: (response) => {
+        const token = response.accessToken; // Supondo que o token esteja na propriedade 'token' da resposta
+        this.loginService.saveToken(token);
+        console.log('Login successful!', response);
+        this.router.navigate(['/algo']);
+      },
+      error: (error) => {
+        console.error('Error while logging in:', error);
+      }
+    });
   }
 
 }
